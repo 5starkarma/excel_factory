@@ -1,9 +1,11 @@
+from builtins import property
+
 import pandas as pd
 
 
 class XLSDataExtractor:
     """
-    Extracts the data from an Excel (XLS) spreadsheet.
+    Extracts the data from an Excel (XLS) spreadsheet
     Output is a pandas data-frame.
     """
     def __init__(self, file_path):
