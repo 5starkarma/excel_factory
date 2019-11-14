@@ -31,20 +31,24 @@ class XLSXDataExtractor:
 
 def data_extraction_factory(file_path):
     """A function for assigning the correct DataExtractor constructor."""
+
     if file_path.endswith('xls'):
         extractor = XLSDataExtractor
     elif file_path.endswith('xlsx'):
         extractor = XLSXDataExtractor
     else:
         raise ValueError(f'Cannot open the file: {file_path}. Incorrect file type.')
+
     return extractor(file_path)
 
 
 def extract_data_from(file_path):
     """A function for exception handling."""
     factory_obj = None
+
     try:
         factory_obj = data_extraction_factory(file_path)
     except ValueError as e:
         print(e)
+
     return factory_obj
